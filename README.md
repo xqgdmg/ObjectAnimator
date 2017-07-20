@@ -1,0 +1,2 @@
+# ObjectAnimator
+ObjectAnimator 实现x轴或者y轴的旋转好像只能靠属性动画，view动画不知道如何实现
