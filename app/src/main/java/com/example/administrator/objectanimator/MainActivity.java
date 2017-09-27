@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         // imageView.setAlpha(alpha)
 
-        imageView.clearAnimation();  // 这个并没有用
+//        imageView.clearAnimation();  // 这个并没有用
 
         if (animatorSet != null) animatorSet.cancel();
         if (animator != null) animator.cancel();
@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         // 还是要设置 三个参数
         // 时长, 重复的次数, 重复的模式
         animator.setDuration(2000);
-        animator.setRepeatCount(ObjectAnimator.INFINITE); // 重复无限多次
-        animator.setRepeatMode(ObjectAnimator.REVERSE); // 重复的模式
+        animator.setRepeatCount(0); // 重复次数
+        animator.setRepeatMode(ObjectAnimator.RESTART); // 重复的模式  只有在repeatCount大于0或为INFINITE的时候setRepeatMode才会生效。
 
         animator.start();
 //        animator.cancel();  //马上就会取消，并且不会还原，保持原来的效果，这里会变成透明度为零（看不见了）
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 0, 100);
 
         animator.setDuration(2000);
-        animator.setRepeatCount(ObjectAnimator.INFINITE); // 重复无限多次
+        animator.setRepeatCount(0); // 重复无限多次
         animator.setRepeatMode(ObjectAnimator.REVERSE); // 重复的模式
 
         animator.start();
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         animator = ObjectAnimator.ofFloat(imageView, "scaleY", 0.0f,2.0f);
 
         animator.setDuration(2000);
-        animator.setRepeatCount(ObjectAnimator.INFINITE); // 重复无限多次
+        animator.setRepeatCount(0); // 重复无限多次
         animator.setRepeatMode(ObjectAnimator.REVERSE); // 重复的模式
 
         animator.start();
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         animator = ObjectAnimator.ofFloat(imageView, "rotationY", 0,360);
 
         animator.setDuration(2000);
-        animator.setRepeatCount(ObjectAnimator.INFINITE); // 重复无限多次
+        animator.setRepeatCount(0); // 重复无限多次
         animator.setRepeatMode(ObjectAnimator.REVERSE); // 重复的模式
 
         animator.start();
